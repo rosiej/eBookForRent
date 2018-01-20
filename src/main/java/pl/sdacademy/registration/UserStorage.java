@@ -9,7 +9,7 @@ public class UserStorage {
 
     }
 
-    Map <String, String> users = new HashMap<String, String>();
+    private Map <String, String> users = new HashMap<String, String>();
     {
 
 
@@ -18,5 +18,9 @@ public class UserStorage {
     public boolean containsUserWith(String login) {
 
         return users.containsKey(login);
+    }
+
+    public void addUser(String login, String password) {
+        users.put(login, password);
     }
 }

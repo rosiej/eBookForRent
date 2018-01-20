@@ -9,23 +9,24 @@ public class RegistrationControllerTest {
 
     @Test
     public void shouldRegisteredNewUser() {
-        Response result = new RegistrationController().register("login", "pasword");
+        Response result = new RegistrationController(new UserStorage()).register("login", "pasword");
         assertEquals(true, result.isSuccess());
     }
 
     @Test
     public void passwordIsTooShort() {
-        Response result = new RegistrationController().register("loginus", "pa");
+        Response result = new RegistrationController(new UserStorage()).register("loginus", "pa");
         assertEquals(false, result.isSuccess());
         assertEquals("password is too short", result.getMessage());
     }
 
     @Test
     public void userAlreadyExist() {
-        Response result = new RegistrationController().register("login1", "pasword");
         UserStorage userStorage = new UserStorage();
-        userStorage.users.put("login1","pasword");
-        userStorage.containsUserWith("login1");
+        userStorage.addUser("login1","password");
+
+        Response result = new RegistrationController(userStorage).register("login1", "pasword");
+
         assertEquals(false, result.isSuccess());
         assertEquals("User already exist", result.getMessage());
 
