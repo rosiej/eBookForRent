@@ -14,7 +14,20 @@ public class RegistrationUi {
     private RegistrationController registrationController = new RegistrationController(new UserStorage());
 
     public void welcomeMessage() {
-        System.out.println("Witaj gościu! Zarejestruj się!");
+        System.out.println("Menu: ");
+        System.out.println("Wybierz opcję, \n Zarejstruj się - wciśnij 1 \n Zaloguj się - wciśnij 2 \n Wyłącz program - wciśnij 3");
+        String choice = scanner.nextLine();
+        if (choice.equals("1")) {
+            registrationUi();
+            welcomeMessage();
+        }if (choice.equals("2")){
+            welcomeMessage();
+        }if (choice.equals("3")){
+            return;
+        }
+
+    }
+    public void registrationUi(){
         System.out.println("podaj login: ");
         String login = scanner.nextLine();
 
