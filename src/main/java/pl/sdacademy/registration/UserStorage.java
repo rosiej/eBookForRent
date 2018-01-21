@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UserStorage {
+
     private Map<String, User> users = new HashMap<String, User>();
 
     public boolean containsUserWith(String login) {
