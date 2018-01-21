@@ -23,8 +23,10 @@ public class RegistrationController {
             response.setMessage("password is too short");
         }else{
             response.setSuccess(true);
+            User user = new User(login, pasword);
         }
 
         return response;
     }
+
 }
