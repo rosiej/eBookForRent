@@ -1,7 +1,7 @@
 package pl.sdacademy.login;
 
-import pl.sdacademy.registration.User;
-import pl.sdacademy.registration.UserStorage;
+import pl.sdacademy.domain.User;
+import pl.sdacademy.domain.UserStorage;
 
 import static org.junit.Assert.*;
 

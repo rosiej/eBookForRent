@@ -1,8 +1,9 @@
-package pl.sdacademy.registration;
+package pl.sdacademy.domain;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
+import pl.sdacademy.domain.User;
+import pl.sdacademy.domain.UserAlreadyExistException;
+import pl.sdacademy.domain.UserStorage;
 
 public class UserStorageTest {
     @Test(expected = UserAlreadyExistException.class)
@@ -16,8 +17,6 @@ public class UserStorageTest {
        userStorage.addUser(user2);
     }
 
-//    @Test
-//    public void addUser() throws Exception {
-//    }
+
 
 }

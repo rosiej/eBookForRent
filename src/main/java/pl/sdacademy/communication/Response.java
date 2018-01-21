@@ -1,4 +1,4 @@
-package pl.sdacademy.registration;
+package pl.sdacademy.communication;
 
 public class Response {
     private boolean isSuccess;

@@ -1,4 +1,7 @@
-package pl.sdacademy.registration;
+package pl.sdacademy.domain;
+
+import pl.sdacademy.domain.User;
+import pl.sdacademy.domain.UserAlreadyExistException;
 
 import java.util.HashMap;
 import java.util.Map;
