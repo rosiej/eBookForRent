@@ -6,11 +6,11 @@ import pl.sdacademy.domain.UserStorage;
 
 import java.util.Map;
 
-public class LoginControler {
+public class LogInControler {
 
     private UserStorage userStorage;
 
-    public LoginControler(UserStorage userStorage) {
+    public LogInControler(UserStorage userStorage) {
 
         this.userStorage = userStorage;
     }
