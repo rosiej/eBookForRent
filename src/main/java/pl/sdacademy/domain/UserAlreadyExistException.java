@@ -1,4 +1,4 @@
-package pl.sdacademy.registration;
+package pl.sdacademy.domain;
 
 public class UserAlreadyExistException extends RuntimeException {
     public UserAlreadyExistException(String login) {

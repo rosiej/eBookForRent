@@ -2,6 +2,9 @@
 package pl.sdacademy.registration;
 
 import org.junit.Test;
+import pl.sdacademy.communication.Response;
+import pl.sdacademy.domain.User;
+import pl.sdacademy.domain.UserStorage;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

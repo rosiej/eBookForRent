@@ -1,4 +1,4 @@
-package pl.sdacademy.registration;
+package pl.sdacademy.domain;
 
 public class User {
     String login;

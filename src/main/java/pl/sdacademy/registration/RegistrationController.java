@@ -1,5 +1,9 @@
 package pl.sdacademy.registration;
 
+import pl.sdacademy.communication.Response;
+import pl.sdacademy.domain.User;
+import pl.sdacademy.domain.UserStorage;
+
 public class RegistrationController {
 
 
