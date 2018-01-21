@@ -27,4 +27,12 @@ public class UserStorage {
     }
 
 
+    public boolean containsUserWith(String login, String password) {
+        if(containsUserWith(login)){
+            User user = users.get(login);
+            return user.hasTheSamePasswordAs(password);
+        }
+
+        return false;
+    }
 }
