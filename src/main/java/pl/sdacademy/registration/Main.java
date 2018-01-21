@@ -7,6 +7,5 @@ public class Main {
 
         RegistrationUi registrationUi = new RegistrationUi();
         registrationUi.welcomeMessage();
-        registrationUi.welcomeMessage();
     }
 }
