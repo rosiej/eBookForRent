@@ -28,7 +28,7 @@ public class LoginControler {
             response.setMessage("niepoprawne hasło");
         } else {
             response.setSuccess(false);
-            response.setMessage("Podany użytkownik nie istnieje");
+            response.setMessage("użytkownik nie istnieje");
         }
 //        else {
 //

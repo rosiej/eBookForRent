@@ -26,6 +26,15 @@ public class LoginControlerTest {
         assertEquals(false, result.isSuccess());
         assertEquals("niepoprawne hasło",result.getMessage());
     }
+    @Test
+    public void noSuchUserInDataBase(){
+        UserStorage userStorage = new UserStorage();
+        userStorage.addUser(new User("login","password"));
+        Response result = new LoginControler(userStorage).logIn("login1","password");
+
+        assertEquals(false,result.isSuccess());
+        assertEquals("użytkownik nie istnieje",result.getMessage());
+    }
 
 
 }
