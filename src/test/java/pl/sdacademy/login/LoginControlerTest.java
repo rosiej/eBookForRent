@@ -17,5 +17,15 @@ public class LoginControlerTest {
 
         assertEquals(true, result.isSuccess());
     }
+    @Test
+    public void invalidPassword() {
+        UserStorage userStorage = new UserStorage();
+        userStorage.addUser(new User("login","pasword1"));
+        Response result = new LoginControler(userStorage).logIn("login","password2");
+
+        assertEquals(false, result.isSuccess());
+        assertEquals("niepoprawne hasło",result.getMessage());
+    }
+
 
 }
