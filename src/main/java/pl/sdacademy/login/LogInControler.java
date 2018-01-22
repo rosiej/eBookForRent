@@ -6,11 +6,11 @@ import pl.sdacademy.domain.UserStorage;
 
 import java.util.Map;
 
-public class LoginControler {
+public class LogInControler {
 
     private UserStorage userStorage;
 
-    public LoginControler(UserStorage userStorage) {
+    public LogInControler(UserStorage userStorage) {
 
         this.userStorage = userStorage;
     }
@@ -20,12 +20,15 @@ public class LoginControler {
 
         Response response = new Response();
 
-        if(userStorage.containsUserWith(login, password)){
+        if(userStorage.containsUserWith(login, password)) {
             response.setSuccess(true);
             response.setMessage("Zalogowałeś się!");
+        }else if(userStorage.containsUserWith(login)&&!userStorage.containsUserWith(login,password)){
+            response.setSuccess(false);
+            response.setMessage("niepoprawne hasło");
         } else {
             response.setSuccess(false);
-            response.setMessage("Podany użytkownik nie istnieje");
+            response.setMessage("użytkownik nie istnieje");
         }
 //        else {
 //
