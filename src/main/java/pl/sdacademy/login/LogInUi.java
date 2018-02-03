@@ -14,6 +14,7 @@ public class LogInUi {
     public LogInUi(UserStorage userStorage) {
        logInControler = new LogInControler(userStorage);
     }
+
     public void logInUi(){
         System.out.println("podaj login:");
         String login = scanner.nextLine();
