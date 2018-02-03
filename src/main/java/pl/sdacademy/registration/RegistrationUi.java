@@ -3,6 +3,7 @@ package pl.sdacademy.registration;
 import pl.sdacademy.communication.Response;
 import pl.sdacademy.domain.UserStorage;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class RegistrationUi {
@@ -16,7 +17,7 @@ public class RegistrationUi {
     }
 
 
-    public void registrationUi(){
+    public void registrationUi() throws FileNotFoundException {
         System.out.println("podaj login: ");
         String login = scanner.nextLine();
 

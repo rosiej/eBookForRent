@@ -5,12 +5,14 @@ import pl.sdacademy.communication.Response;
 import pl.sdacademy.domain.User;
 import pl.sdacademy.domain.UserStorage;
 
+import java.io.FileNotFoundException;
+
 import static org.junit.Assert.*;
 
 public class LogInControlerTest {
 
     @Test
-    public void userShoulBeAbleToLogIn(){
+    public void userShoulBeAbleToLogIn() throws FileNotFoundException {
         UserStorage userStorage = new UserStorage();
         userStorage.addUser(new User("login","password"));
         Response result = new LogInControler(userStorage).logIn("login","password");
@@ -18,7 +20,7 @@ public class LogInControlerTest {
         assertEquals(true, result.isSuccess());
     }
     @Test
-    public void invalidPassword() {
+    public void invalidPassword() throws FileNotFoundException {
         UserStorage userStorage = new UserStorage();
         userStorage.addUser(new User("login","pasword1"));
         Response result = new LogInControler(userStorage).logIn("login","password2");
@@ -27,7 +29,7 @@ public class LogInControlerTest {
         assertEquals("niepoprawne hasło",result.getMessage());
     }
     @Test
-    public void noSuchUserInDataBase(){
+    public void noSuchUserInDataBase() throws FileNotFoundException {
         UserStorage userStorage = new UserStorage();
         userStorage.addUser(new User("login","password"));
         Response result = new LogInControler(userStorage).logIn("login1","password");

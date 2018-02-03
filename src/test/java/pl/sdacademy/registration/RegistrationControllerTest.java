@@ -6,13 +6,15 @@ import pl.sdacademy.communication.Response;
 import pl.sdacademy.domain.User;
 import pl.sdacademy.domain.UserStorage;
 
+import java.io.FileNotFoundException;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class RegistrationControllerTest {
 
     @Test
-    public void shouldRegisteredNewUser() {
+    public void shouldRegisteredNewUser() throws FileNotFoundException {
         UserStorage userStorage = new UserStorage();
 
         Response result = new RegistrationController(userStorage).register("login", "pasword");
@@ -21,7 +23,7 @@ public class RegistrationControllerTest {
     }
 
     @Test
-    public void passwordIsTooShort() {
+    public void passwordIsTooShort() throws FileNotFoundException {
         Response result = new RegistrationController(new UserStorage()).register("loginus", "pa");
 
         assertEquals(false, result.isSuccess());
@@ -29,7 +31,7 @@ public class RegistrationControllerTest {
     }
 
     @Test
-    public void userAlreadyExist() {
+    public void userAlreadyExist() throws FileNotFoundException {
         UserStorage userStorage = new UserStorage();
         userStorage.addUser(new User("login1","pasword"));
 

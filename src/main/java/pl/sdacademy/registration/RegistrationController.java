@@ -4,6 +4,8 @@ import pl.sdacademy.communication.Response;
 import pl.sdacademy.domain.User;
 import pl.sdacademy.domain.UserStorage;
 
+import java.io.FileNotFoundException;
+
 public class RegistrationController {
 
 
@@ -14,7 +16,7 @@ public class RegistrationController {
         this.userStorage = userStorage;
     }
 
-    public Response register(String login, String pasword) {
+    public Response register(String login, String pasword) throws FileNotFoundException {
 
         Response response = new Response();
 
