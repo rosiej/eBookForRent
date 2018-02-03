@@ -9,6 +9,9 @@ import java.util.Map;
 
 public class UserStorage {
 
+    public UserStorage() throws FileNotFoundException {
+    }
+
     public Map<String, User> getUsers() {
         return users;
     }

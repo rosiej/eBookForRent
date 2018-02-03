@@ -1,6 +1,7 @@
 package pl.sdacademy;
 
 import pl.sdacademy.domain.UserStorage;
+import pl.sdacademy.domain.UsersRecord;
 import pl.sdacademy.login.LogInUi;
 import pl.sdacademy.registration.RegistrationUi;
 import pl.sdacademy.view.WelcomeMessage;
@@ -23,6 +24,11 @@ public class Main {
         LogInUi logInUi;
         logInUi = new LogInUi(userStorage);
 
-       new WelcomeMessage().welcomeMessage(registrationUi,logInUi,scanner);
+        UsersRecord usersRecord = new UsersRecord();
+
+
+       new WelcomeMessage().welcomeMessage(registrationUi,logInUi,scanner, usersRecord);
+
+
     }
 }
