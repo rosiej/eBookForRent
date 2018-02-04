@@ -17,7 +17,7 @@ public class RegistrationUi {
     }
 
 
-    public void registrationUi() throws FileNotFoundException {
+    public Response registrationUi() throws FileNotFoundException {
         System.out.println("podaj login: ");
         String login = scanner.nextLine();
 
@@ -34,6 +34,7 @@ public class RegistrationUi {
             System.out.println(response.getMessage());
             System.out.println();
         }
+        return response;
 
 
     }

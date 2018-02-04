@@ -4,6 +4,7 @@ import pl.sdacademy.communication.Response;
 import pl.sdacademy.domain.User;
 import pl.sdacademy.domain.UserStorage;
 import pl.sdacademy.domain.UsersRecord;
+import pl.sdacademy.view.WelcomeMessage;
 
 import java.io.FileNotFoundException;
 
@@ -12,6 +13,7 @@ public class RegistrationController {
 
     private UserStorage userStorage;
     private UsersRecord usersRecord = new UsersRecord();
+
 
     public RegistrationController(UserStorage userStorage) throws FileNotFoundException {
 
@@ -25,6 +27,8 @@ public class RegistrationController {
         if(userStorage.containsUserWith(login)) {
             response.setSuccess(false);
             response.setMessage("User already exist");
+
+
 
         }else if(pasword.length()<=6){
             response.setSuccess(false);
