@@ -26,6 +26,7 @@ public class Main {
 
         UsersRecord usersRecord = new UsersRecord();
 
+        userStorage.uploadUsersList();
 
        new WelcomeMessage().welcomeMessage(registrationUi,logInUi,scanner, usersRecord);
 

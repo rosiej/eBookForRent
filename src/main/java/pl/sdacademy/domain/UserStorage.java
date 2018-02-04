@@ -3,15 +3,16 @@ package pl.sdacademy.domain;
 import pl.sdacademy.domain.User;
 import pl.sdacademy.domain.UserAlreadyExistException;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class UserStorage {
 
     public UserStorage() throws FileNotFoundException {
     }
-
     public Map<String, User> getUsers() {
         return users;
     }
@@ -20,8 +21,17 @@ public class UserStorage {
 
     private UsersRecord usersRecord = new UsersRecord();
 
+    Scanner scanner = new Scanner(new File("UsersRecord.txt"));
+
     public boolean containsUserWith(String login) {
         return users.containsKey(login);
+    }
+
+    public void uploadUsersList(){
+        while(scanner.hasNext()){
+            String[] user = scanner.nextLine().split(" ; ");
+            users.put(user[0].toString(),new User(user[0].toString(),user[1].toString()));
+        }
     }
 
     public void addUser(User user) throws FileNotFoundException {
@@ -29,7 +39,6 @@ public class UserStorage {
             throw new UserAlreadyExistException(user.getLogin());
         }else{
             users.put(user.getLogin(), user);
-            usersRecord.addingRecord(user);
         }
     }
 
