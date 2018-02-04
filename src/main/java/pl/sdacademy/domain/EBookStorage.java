@@ -42,6 +42,6 @@ public class EBookStorage {
         criminalSensationThriller.addChildCategory(thriller);
         moralLiterature.addChildCategory(erotics);
         moralLiterature.addChildCategory(romance);
-        
+
      }
 }
