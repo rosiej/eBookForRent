@@ -16,14 +16,6 @@ public class WelcomeMessage {
 
     }
 
-    public enum State {
-        INIT,
-        LOGGING,
-        LOGGED,
-        REGISTRATING,
-        EXIT;
-    }
-
     public void welcomeMessage(RegistrationUi registrationUi, LogInUi logInUi, Scanner scanner, UsersRecord usersRecord) throws FileNotFoundException {
 
         State state = State.INIT;
