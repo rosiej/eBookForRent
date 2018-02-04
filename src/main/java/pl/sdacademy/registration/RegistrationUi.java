@@ -12,7 +12,7 @@ public class RegistrationUi {
     private Scanner scanner = new Scanner(System.in);
     private RegistrationController registrationController;
 
-    public RegistrationUi(UserStorage userStorage) {
+    public RegistrationUi(UserStorage userStorage) throws FileNotFoundException {
         registrationController = new RegistrationController(userStorage);
     }
 

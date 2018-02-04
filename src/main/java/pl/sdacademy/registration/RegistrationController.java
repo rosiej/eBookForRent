@@ -3,6 +3,7 @@ package pl.sdacademy.registration;
 import pl.sdacademy.communication.Response;
 import pl.sdacademy.domain.User;
 import pl.sdacademy.domain.UserStorage;
+import pl.sdacademy.domain.UsersRecord;
 
 import java.io.FileNotFoundException;
 
@@ -10,8 +11,9 @@ public class RegistrationController {
 
 
     private UserStorage userStorage;
+    private UsersRecord usersRecord = new UsersRecord();
 
-    public RegistrationController(UserStorage userStorage) {
+    public RegistrationController(UserStorage userStorage) throws FileNotFoundException {
 
         this.userStorage = userStorage;
     }
@@ -31,6 +33,8 @@ public class RegistrationController {
             response.setSuccess(true);
             User user = new User(login,pasword);
             userStorage.addUser(user);
+            usersRecord.addingRecord(user);
+
         }
 
         return response;
