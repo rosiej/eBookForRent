@@ -14,7 +14,7 @@ public class LogInUi {
     public LogInUi(UserStorage userStorage) {
        logInControler = new LogInControler(userStorage);
     }
-    public void logInUi(){
+    public Response logInUi(){
         System.out.println("podaj login:");
         String login = scanner.nextLine();
 
@@ -29,6 +29,7 @@ public class LogInUi {
         }else{
             System.out.println(response.getMessage());
         }
+        return response;
     }
 }
 
