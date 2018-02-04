@@ -10,5 +10,4 @@ public class Book {
         this.author = author;
         this.content = content;
     }
-
 }
