@@ -9,6 +9,11 @@ public class Category {
     private Category parent = null;
     private ArrayList <Category> children;
     private HashMap<String,Book> books;
+
+    public int getId() {
+        return id;
+    }
+
     private int id;
 
 
