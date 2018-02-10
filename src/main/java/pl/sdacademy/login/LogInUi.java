@@ -1,7 +1,6 @@
 package pl.sdacademy.login;
 
 import pl.sdacademy.communication.Response;
-import pl.sdacademy.domain.UserStorage;
 import pl.sdacademy.systeminterface.SystemInterface;
 
 public class LogInUi {
@@ -10,8 +9,8 @@ public class LogInUi {
     private SystemInterface systemInterface;
 
 
-    public LogInUi(UserStorage userStorage, SystemInterface systemInterface) {
-       logInControler = new LogInControler(userStorage);
+    public LogInUi(SystemInterface systemInterface, LogInControler logInControler) {
+       this.logInControler = logInControler;
         this.systemInterface = systemInterface;
     }
     public Response logInUi(){

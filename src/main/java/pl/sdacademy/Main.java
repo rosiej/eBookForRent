@@ -3,6 +3,7 @@ package pl.sdacademy;
 import pl.sdacademy.domain.EBookStorage;
 import pl.sdacademy.domain.UserStorage;
 import pl.sdacademy.domain.UsersRecord;
+import pl.sdacademy.login.LogInControler;
 import pl.sdacademy.login.LogInUi;
 import pl.sdacademy.registration.RegistrationController;
 import pl.sdacademy.registration.RegistrationUi;
@@ -27,7 +28,7 @@ public class Main {
         registrationUi = new RegistrationUi(new CliSystemInterface(scanner), new RegistrationController(userStorage));
 
         LogInUi logInUi;
-        logInUi = new LogInUi(userStorage, new CliSystemInterface(scanner));
+        logInUi = new LogInUi(new CliSystemInterface(scanner), new LogInControler(userStorage));
 
         UsersRecord usersRecord = new UsersRecord();
 
