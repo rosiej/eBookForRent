@@ -1,5 +1,6 @@
 package pl.sdacademy;
 
+import pl.sdacademy.domain.EBookStorage;
 import pl.sdacademy.domain.UserStorage;
 import pl.sdacademy.domain.UsersRecord;
 import pl.sdacademy.login.LogInUi;
@@ -11,6 +12,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
+        EBookStorage eBookStorage;
+        eBookStorage = new EBookStorage();
 
         UserStorage userStorage;
         userStorage = new UserStorage();
@@ -28,7 +31,8 @@ public class Main {
 
         userStorage.uploadUsersList();
 
-       new WelcomeMessage().welcomeMessage(registrationUi,logInUi,scanner, usersRecord);
+
+       new WelcomeMessage().welcomeMessage(registrationUi,logInUi,scanner, usersRecord, eBookStorage);
 
 
     }

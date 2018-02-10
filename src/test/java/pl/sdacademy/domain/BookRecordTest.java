@@ -27,6 +27,6 @@ public class BookRecordTest {
         Book book = new Book("Biografia", "Marcin", "Cośtam", 1);
         Category category = new Category("Biografia", 1);
 
-        Response result = new BookRecord().categoryReader(category);
+//        Response result = new BookRecord().categoryReader(category);
     }
 }

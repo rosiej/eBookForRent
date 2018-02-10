@@ -1,5 +1,7 @@
 package pl.sdacademy.view;
 
+import pl.sdacademy.domain.Category;
+import pl.sdacademy.domain.EBookStorage;
 import pl.sdacademy.domain.UsersRecord;
 import pl.sdacademy.login.LogInUi;
 import pl.sdacademy.registration.RegistrationUi;
@@ -14,9 +16,10 @@ public class WelcomeMessage {
         EXIT,
         ADMIN;
 
+
     }
 
-    public void welcomeMessage(RegistrationUi registrationUi, LogInUi logInUi, Scanner scanner, UsersRecord usersRecord) throws FileNotFoundException {
+    public void welcomeMessage(RegistrationUi registrationUi, LogInUi logInUi, Scanner scanner, UsersRecord usersRecord, EBookStorage eBookStorage) throws FileNotFoundException {
 
         State state = State.INIT;
 
@@ -64,6 +67,7 @@ public class WelcomeMessage {
                     String loggedChoice = scanner.nextLine();
 
                     if(loggedChoice.equals("1")){
+                        eBookStorage.printTree(eBookStorage.getMainCategory());
                         break;
                     }
                     if(loggedChoice.equals("2")){

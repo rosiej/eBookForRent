@@ -34,17 +34,17 @@ public class BookRecord {
         }
         return response;
     }
-    public Response categoryReader (Category category) {
-        ArrayList<String> books = new ArrayList<String>();
-        while (scanner.hasNext()){
-            String [] book = scanner.nextLine().split("; ");
-            if (category.getId() == 1) {
-                if (Integer.parseInt(book [0])== 1 || Integer.parseInt(book[0])==11 || Integer.parseInt(book[0])== 12)
-                books.add("Autor: "+book[1]+ "Tytuł: "+ book[2]);
-                response.setSuccess(true);
-                response.setMessage(books.);
-            }
-        }
-        return response;
-    }
+//    public Response categoryReader (Category category) {
+//        ArrayList<String> books = new ArrayList<String>();
+//        while (scanner.hasNext()){
+//            String [] book = scanner.nextLine().split("; ");
+//            if (category.getId() == 1) {
+//                if (Integer.parseInt(book [0])== 1 || Integer.parseInt(book[0])==11 || Integer.parseInt(book[0])== 12)
+//                books.add("Autor: "+book[1]+ "Tytuł: "+ book[2]);
+//                response.setSuccess(true);
+//                response.setMessage(books.);
+//            }
+//        }
+//        return response;
+//    }
 }

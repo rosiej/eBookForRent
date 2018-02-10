@@ -1,14 +1,22 @@
 package pl.sdacademy.domain;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Category {
 
     private String name;
     private Category parent = null;
-    private ArrayList <Category> children;
-    private HashMap<String,Book> books;
+
+
+
+    public ArrayList<Category> getChildren() {
+        return children;
+    }
+
+    private ArrayList <Category> children = new ArrayList<Category>();
 
     public int getId() {
         return id;
@@ -35,5 +43,14 @@ public class Category {
 
     public String getName() {
         return name;
+    }
+
+
+    public Category getChild(int index) {
+        return this.children.get(index);
+    }
+
+    public int size() {
+        return this.children.size();
     }
 }
