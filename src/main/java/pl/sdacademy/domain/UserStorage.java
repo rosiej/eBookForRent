@@ -1,8 +1,5 @@
 package pl.sdacademy.domain;
 
-import pl.sdacademy.domain.User;
-import pl.sdacademy.domain.UserAlreadyExistException;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
@@ -34,7 +31,7 @@ public class UserStorage {
         }
     }
 
-    public void addUser(User user) throws FileNotFoundException {
+    public void addUser(User user) {
         if(containsUserWith(user.getLogin())){
             throw new UserAlreadyExistException(user.getLogin());
         }else{

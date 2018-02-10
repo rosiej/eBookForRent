@@ -4,6 +4,18 @@ public class Response {
     private boolean isSuccess;
     private String message;
 
+    public static Response isSuccessful() {
+        Response response = new Response();
+        response.setSuccess(true);
+        return response;
+    }
+    public static Response isNotSuccessful(String failure){
+        Response response = new Response();
+        response.setMessage(failure);
+        response.setSuccess(false);
+        return response;
+    }
+
     public void setSuccess(boolean success) {
         isSuccess = success;
     }

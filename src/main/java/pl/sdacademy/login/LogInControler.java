@@ -25,10 +25,10 @@ public class LogInControler {
             response.setMessage("Zalogowałeś się!");
         }else if(userStorage.containsUserWith(login)&&!userStorage.containsUserWith(login,password)){
             response.setSuccess(false);
-            response.setMessage("niepoprawne hasło");
+            response.setMessage("Niepoprawne hasło");
         } else {
             response.setSuccess(false);
-            response.setMessage("użytkownik nie istnieje");
+            response.setMessage("Użytkownik nie istnieje");
         }
 //        else {
 //

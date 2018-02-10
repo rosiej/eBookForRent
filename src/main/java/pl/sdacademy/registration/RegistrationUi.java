@@ -1,38 +1,36 @@
 package pl.sdacademy.registration;
 
 import pl.sdacademy.communication.Response;
-import pl.sdacademy.domain.UserStorage;
+import pl.sdacademy.systeminterface.SystemInterface;
 
-import java.io.FileNotFoundException;
-import java.util.Scanner;
 
 public class RegistrationUi {
 
 
-    private Scanner scanner = new Scanner(System.in);
     private RegistrationController registrationController;
+    private SystemInterface systemInterface;
 
-    public RegistrationUi(UserStorage userStorage) throws FileNotFoundException {
-        registrationController = new RegistrationController(userStorage);
+    public RegistrationUi(SystemInterface systemInterface, RegistrationController registrationController) {
+        this.registrationController = registrationController;
+        this.systemInterface = systemInterface;
     }
 
 
-    public Response registrationUi() throws FileNotFoundException {
-        System.out.println("podaj login: ");
-        String login = scanner.nextLine();
+    public Response registrationUi() {
+        systemInterface.display("Podaj login: ");
+        String login = systemInterface.readInformation();
 
-        System.out.println("podaj hasło: ");
-        String password = scanner.nextLine();
+        systemInterface.display("Podaj hasło: ");
+        String password = systemInterface.readInformation();
 
         Response response = registrationController.register(login, password);
 
         if(response.isSuccess()){
-            System.out.println("Witaj, "+ login);
-            System.out.println();
+            systemInterface.display("Witaj, "+ login);
+            systemInterface.display("");
         }else{
-
-            System.out.println(response.getMessage());
-            System.out.println();
+            systemInterface.display(response.getMessage());
+            systemInterface.display("");
         }
         return response;
 

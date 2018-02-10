@@ -3,7 +3,6 @@ package pl.sdacademy.domain;
 import pl.sdacademy.communication.Response;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BookRecord {

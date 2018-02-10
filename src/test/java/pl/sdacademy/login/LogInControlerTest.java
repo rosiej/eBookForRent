@@ -26,7 +26,7 @@ public class LogInControlerTest {
         Response result = new LogInControler(userStorage).logIn("login","password2");
 
         assertEquals(false, result.isSuccess());
-        assertEquals("niepoprawne hasło",result.getMessage());
+        assertEquals("Niepoprawne hasło",result.getMessage());
     }
     @Test
     public void noSuchUserInDataBase() throws FileNotFoundException {
@@ -35,7 +35,7 @@ public class LogInControlerTest {
         Response result = new LogInControler(userStorage).logIn("login1","password");
 
         assertEquals(false,result.isSuccess());
-        assertEquals("użytkownik nie istnieje",result.getMessage());
+        assertEquals("Użytkownik nie istnieje",result.getMessage());
     }
 
 

@@ -2,32 +2,32 @@ package pl.sdacademy.login;
 
 import pl.sdacademy.communication.Response;
 import pl.sdacademy.domain.UserStorage;
-
-import java.util.Scanner;
+import pl.sdacademy.systeminterface.SystemInterface;
 
 public class LogInUi {
 
-    private Scanner scanner = new Scanner(System.in);
     private LogInControler logInControler;
+    private SystemInterface systemInterface;
 
 
-    public LogInUi(UserStorage userStorage) {
+    public LogInUi(UserStorage userStorage, SystemInterface systemInterface) {
        logInControler = new LogInControler(userStorage);
+        this.systemInterface = systemInterface;
     }
     public Response logInUi(){
-        System.out.println("podaj login:");
-        String login = scanner.nextLine();
+        systemInterface.display("Podaj login:");
+        String login = systemInterface.readInformation();
 
-        System.out.println("podaj hasło:");
-        String password = scanner.nextLine();
+        systemInterface.display("Podaj hasło:");
+        String password = systemInterface.readInformation();
 
         Response response = logInControler.logIn(login,password);
 
         if(response.isSuccess()){
-            System.out.println("zalogowany: "+login);
-            System.out.println();
+            systemInterface.display("Zalogowany: "+login);
+            systemInterface.display("");
         }else{
-            System.out.println(response.getMessage());
+            systemInterface.display(response.getMessage());
         }
         return response;
     }

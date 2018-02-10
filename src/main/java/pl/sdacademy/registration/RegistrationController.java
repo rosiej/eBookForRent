@@ -12,15 +12,23 @@ public class RegistrationController {
 
 
     private UserStorage userStorage;
-    private UsersRecord usersRecord = new UsersRecord();
+    private UsersRecord usersRecord;
+
+    {
+        try {
+            usersRecord = new UsersRecord();
+        } catch (FileNotFoundException e) {
+            //usunąć to w ch*j
+        }
+    }
 
 
-    public RegistrationController(UserStorage userStorage) throws FileNotFoundException {
+    public RegistrationController(UserStorage userStorage) {
 
         this.userStorage = userStorage;
     }
 
-    public Response register(String login, String pasword) throws FileNotFoundException {
+    public Response register(String login, String pasword) {
 
         Response response = new Response();
 
@@ -37,7 +45,11 @@ public class RegistrationController {
             response.setSuccess(true);
             User user = new User(login,pasword);
             userStorage.addUser(user);
-            usersRecord.addingRecord(user);
+            try {
+                usersRecord.addingRecord(user);
+            } catch (FileNotFoundException e) {
+                //usunąć to w ch*j
+            }
 
         }
 
