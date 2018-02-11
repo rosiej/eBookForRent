@@ -1,14 +1,14 @@
 package pl.sdacademy.domain;
 
 import org.junit.Test;
-import pl.sdacademy.domain.User;
-import pl.sdacademy.domain.UserAlreadyExistException;
-import pl.sdacademy.domain.UserStorage;
+
+import java.io.File;
+import java.util.Scanner;
 
 public class UserStorageTest {
     @Test(expected = UserAlreadyExistException.class)
     public void containsUserWithTest() throws Exception{
-        UserStorage userStorage = new UserStorage();
+        UserStorage userStorage = new FileUserStorage(new Scanner(new File("UsersRecord.txt")));
         User user1 = new User("login","password");
         User user2 = new User("login","password2");
 

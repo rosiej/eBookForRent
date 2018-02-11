@@ -22,7 +22,7 @@ public class BookRecordTest {
     }
 
     @Test
-    public void shouldReadCategory() throws FileNotFoundException{
+    public void shouldReadCategory() {
         File bookList = new File("BookList.txt");
         Book book = new Book("Biografia", "Marcin", "Cośtam", 1);
         Category category = new Category("Biografia", 1);
