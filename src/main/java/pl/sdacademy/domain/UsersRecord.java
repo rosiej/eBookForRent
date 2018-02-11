@@ -4,9 +4,6 @@ import java.io.*;
 import java.util.Scanner;
 
 public class UsersRecord {
-    public File getUsersList() {
-        return usersList;
-    }
 
     File usersList = new File("UsersRecord.txt");
 
@@ -33,9 +30,4 @@ public class UsersRecord {
             }
     }
 
-    public void readingRecord() {
-        while (scanner.hasNext()) {
-            System.out.println(scanner.nextLine());
-        }
-    }
 }
